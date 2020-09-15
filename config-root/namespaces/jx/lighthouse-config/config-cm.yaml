@@ -60,7 +60,7 @@ data:
         - needs-rebase
         repos:
         - jstrachan/jx3-demo-gke-vault
-      target_url: http://deck-jx.
+      target_url: http://deck-jx.35.238.123.29.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
