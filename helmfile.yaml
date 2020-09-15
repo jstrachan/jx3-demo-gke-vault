@@ -24,7 +24,7 @@ releases:
   name: jenkins
   namespace: jx
   values:
-  - charts/jenkinsci/jenkins/values.yaml
+  - versionStream/charts/jenkinsci/jenkins/values.yaml.gotmpl
 - chart: jenkins-x/jxboot-helmfile-resources
   version: 0.0.296
   name: jxboot-helmfile-resources
