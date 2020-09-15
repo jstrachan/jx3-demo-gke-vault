@@ -34,3 +34,4 @@ data:
     credentials-binding:1.23
     git:4.2.2
     configuration-as-code:1.41
+    jx-resources:1.0.38
