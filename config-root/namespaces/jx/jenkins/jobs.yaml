@@ -1,0 +1,63 @@
+# Source: jenkins/templates/jobs.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-jobs
+  namespace: jx
+  labels:
+    "app.kubernetes.io/name": 'jenkins'
+    "helm.sh/chart": "jenkins-2.6.4"
+    "app.kubernetes.io/managed-by": "Helm"
+    "app.kubernetes.io/instance": "jenkins"
+    "app.kubernetes.io/component": "jenkins-master"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+data:
+  simple-java-maven-app: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <flow-definition plugin="workflow-job@2.39">
+      <actions>
+        <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction
+                plugin="pipeline-model-definition@1.7.2"/>
+        <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction
+                plugin="pipeline-model-definition@1.7.2">
+          <jobProperties/>
+          <triggers/>
+          <parameters/>
+          <options/>
+        </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+      </actions>
+      <description/>
+      <keepDependencies>false</keepDependencies>
+      <properties>
+        <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+          <triggers>
+            <hudson.triggers.SCMTrigger>
+              <spec>H/15 * * * *</spec>
+              <ignorePostCommitHooks>false</ignorePostCommitHooks>
+            </hudson.triggers.SCMTrigger>
+          </triggers>
+        </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      </properties>
+      <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.83">
+        <scm class="hudson.plugins.git.GitSCM" plugin="git@4.2.2">
+          <configVersion>2</configVersion>
+          <userRemoteConfigs>
+            <hudson.plugins.git.UserRemoteConfig>
+              <url>https://github.com/jstrachan/simple-java-maven-app</url>
+            </hudson.plugins.git.UserRemoteConfig>
+          </userRemoteConfigs>
+          <branches>
+            <hudson.plugins.git.BranchSpec>
+              <name>*/master</name>
+            </hudson.plugins.git.BranchSpec>
+          </branches>
+          <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+          <submoduleCfg class="list"/>
+          <extensions/>
+        </scm>
+        <scriptPath>jenkins/Jenkinsfile</scriptPath>
+        <lightweight>true</lightweight>
+      </definition>
+      <triggers/>
+      <disabled>false</disabled>
+    </flow-definition>
