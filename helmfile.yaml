@@ -21,6 +21,8 @@ repositories:
   url: https://charts.jenkins.io
 releases:
 - chart: jenkinsci/jenkins
+  name: jenkins
+  namespace: jx
   values:
     - charts/jenkinsci/jenkins/values.yaml
 - chart: jenkins-x/jxboot-helmfile-resources
