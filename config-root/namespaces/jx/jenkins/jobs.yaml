@@ -12,7 +12,7 @@ metadata:
     "app.kubernetes.io/component": "jenkins-master"
     gitops.jenkins-x.io/pipeline: 'namespaces'
 data:
-  simple-java-maven-app-job: |-
+  simple-java-maven-app: |-
     <?xml version='1.0' encoding='UTF-8'?>
     <flow-definition plugin="workflow-job@2.39">
       <actions>
@@ -61,35 +61,3 @@ data:
       <triggers/>
       <disabled>false</disabled>
     </flow-definition>
-  test-job: |-
-    <?xml version='1.0' encoding='UTF-8'?>
-    <project>
-      <keepDependencies>false</keepDependencies>
-      <properties/>
-      <scm class="hudson.scm.NullSCM"/>
-      <canRoam>false</canRoam>
-      <disabled>false</disabled>
-      <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-      <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-      <triggers/>
-      <concurrentBuild>false</concurrentBuild>
-      <builders/>
-      <publishers/>
-      <buildWrappers/>
-    </project>
-  test-job-2: |-
-    <?xml version='1.0' encoding='UTF-8'?>
-    <project>
-      <keepDependencies>false</keepDependencies>
-      <properties/>
-      <scm class="hudson.scm.NullSCM"/>
-      <canRoam>false</canRoam>
-      <disabled>false</disabled>
-      <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-      <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-      <triggers/>
-      <concurrentBuild>false</concurrentBuild>
-      <builders/>
-      <publishers/>
-      <buildWrappers/>
-    </project>
