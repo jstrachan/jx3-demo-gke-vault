@@ -1,0 +1,8 @@
+master:
+  JCasC:
+    enabled: true
+  sidecars:
+    configAutoReload:
+      enabled: true
+rbac:
+  create: true
