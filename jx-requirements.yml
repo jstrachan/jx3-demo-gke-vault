@@ -7,38 +7,62 @@ buildPacks:
     gitRef: master
     gitURL: https://github.com/jenkins-x/jxr-packs-kubernetes.git
 cluster:
-  clusterName: ""
-  devEnvApprovers:
-  - todo
-  environmentGitOwner: "todo"
+  clusterName: tf-jx-dynamic-cat
+  environmentGitOwner: todo
   gitKind: github
   gitName: github
   gitServer: https://github.com
+  gke:
+    projectNumber: "688875092189"
   namespace: jx
-  project:  ""
+  project: jenkins-x-labs-bdd
   provider: gke
   registry: gcr.io
-  zone: ""
+  vaultName: tf-jx-dynamic-cat
+  vaultSAName: tf-jx-dynamic-cat-vt
+  zone: us-central1-a
 environments:
-- key: dev
-  owner: ""
-  repository: ""
-- key: staging
-  owner: ""
-  repository: ""
-- key: production
-  owner: ""
-  repository: ""
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  owner: jstrachan
+  repository: jx3-demo-gke-vault
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
 gitops: true
 ingress:
-  domain: ""
+  domain: 35.238.123.29.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
-    production: false
+    production: true
 kaniko: true
+pipelineUser:
+  username: jstrachan
 repository: nexus
 secretStorage: vault
 storage:
@@ -46,15 +70,20 @@ storage:
     enabled: false
     url: ""
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://logs-tf-jx-dynamic-cat-dcde43c47850
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://reports-tf-jx-dynamic-cat-dcde43c47850
   repository:
-    enabled: false
-    url: ""
-vault: {}
+    enabled: true
+    url: gs://repository-tf-jx-dynamic-cat-dcde43c47850
+vault:
+  bucket: vault-tf-jx-dynamic-cat-dcde43c47850
+  key: crypto-key-tf-jx-dynamic-cat-dcde43c47850
+  keyring: keyring-tf-jx-dynamic-cat-dcde43c47850
+  name: tf-jx-dynamic-cat
+  serviceAccount: tf-jx-dynamic-cat-vt
 velero:
   schedule: ""
   ttl: ""

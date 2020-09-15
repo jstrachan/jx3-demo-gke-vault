@@ -1,0 +1,94 @@
+jxRequirements:
+  autoUpdate:
+    enabled: false
+    schedule: ""
+  bootConfigURL: https://github.com/jenkins-x/jx3-boot-config
+  buildPacks:
+    buildPackLibrary:
+      gitRef: master
+      gitURL: https://github.com/jenkins-x/jxr-packs-kubernetes.git
+  cluster:
+    clusterName: tf-jx-dynamic-cat
+    environmentGitOwner: todo
+    gitKind: github
+    gitName: github
+    gitServer: https://github.com
+    gke:
+      projectNumber: "688875092189"
+    namespace: jx
+    project: jenkins-x-labs-bdd
+    provider: gke
+    registry: gcr.io
+    vaultName: tf-jx-dynamic-cat
+    vaultSAName: tf-jx-dynamic-cat-vt
+    zone: us-central1-a
+  environments:
+  - ingress:
+      domain: ""
+      externalDNS: false
+      namespaceSubDomain: ""
+      tls:
+        email: ""
+        enabled: false
+        production: false
+    key: dev
+    owner: jstrachan
+    repository: jx3-demo-gke-vault
+  - ingress:
+      domain: ""
+      externalDNS: false
+      namespaceSubDomain: ""
+      tls:
+        email: ""
+        enabled: false
+        production: false
+    key: staging
+  - ingress:
+      domain: ""
+      externalDNS: false
+      namespaceSubDomain: ""
+      tls:
+        email: ""
+        enabled: false
+        production: false
+    key: production
+  gitops: true
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: true
+  kaniko: true
+  pipelineUser:
+    username: jstrachan
+  repository: nexus
+  secretStorage: vault
+  storage:
+    backup:
+      enabled: false
+      url: ""
+    logs:
+      enabled: true
+      url: gs://logs-tf-jx-dynamic-cat-dcde43c47850
+    reports:
+      enabled: true
+      url: gs://reports-tf-jx-dynamic-cat-dcde43c47850
+    repository:
+      enabled: true
+      url: gs://repository-tf-jx-dynamic-cat-dcde43c47850
+  vault:
+    bucket: vault-tf-jx-dynamic-cat-dcde43c47850
+    key: crypto-key-tf-jx-dynamic-cat-dcde43c47850
+    keyring: keyring-tf-jx-dynamic-cat-dcde43c47850
+    name: tf-jx-dynamic-cat
+    serviceAccount: tf-jx-dynamic-cat-vt
+  velero:
+    schedule: ""
+    ttl: ""
+  versionStream:
+    ref: master
+    url: https://github.com/jenkins-x/jxr-versions.git
+  webhook: lighthouse
