@@ -2,6 +2,9 @@ master:
   JCasC:
     enabled: true
 
+  # allow Jobs via XML
+  enableXmlConfig: true
+
   # By default, the configMap is only used to set the initial config the first time
   # that the chart is installed.  Setting `overwriteConfig` to `true` will overwrite
   # the jenkins config with the contents of the configMap every time the pod starts.
