@@ -1,6 +1,9 @@
 master:
   JCasC:
     enabled: true
+
+  ingress:
+    enabled: true
   sidecars:
     configAutoReload:
       enabled: true
