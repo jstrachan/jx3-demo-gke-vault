@@ -5,7 +5,7 @@ master:
   ingress:
     enabled: true
 {{- if .Values.jxRequirements.ingress.domain }}
-    hostName: "jenkins-{ .Values.jxRequirements.ingress.namespaceSubDomain | default Release.Namespace }}{{ .Values.jxRequirements.ingress.domain }}"
+    hostName: "jenkins-{{ .Values.jxRequirements.ingress.namespaceSubDomain | default Release.Namespace }}{{ .Values.jxRequirements.ingress.domain }}"
 {{- end }}
   sidecars:
     configAutoReload:
