@@ -19,6 +19,8 @@ repositories:
   url: https://storage.googleapis.com/jenkinsxio/charts
 - name: jenkinsci
   url: https://charts.jenkins.io
+- name: dev
+  url: http://chartmuseum-jx.35.238.123.29.nip.io/
 releases:
 - chart: jenkinsci/jenkins
   name: jenkins
@@ -89,5 +91,9 @@ releases:
   version: 1.0.0
   name: pusher-wave
   namespace: secret-infra
+- chart: dev/nodey502
+  version: 1.0.1
+  name: nodey502
+  namespace: jx-staging
 templates: {}
 missingFileHandler: ""
