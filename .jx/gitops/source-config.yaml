@@ -8,4 +8,5 @@ spec:
     provider: https://github.com
     providerKind: github
     providerName: github
-    repositories: []
+    repositories:
+    - name: nodey504
