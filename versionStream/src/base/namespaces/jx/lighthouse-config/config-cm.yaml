@@ -9,14 +9,6 @@ data:
               required_status_checks:
                 contexts:
                 - promotion-build
-            nodey502:
-              required_status_checks:
-                contexts:
-                - pr-build
-            nodey503:
-              required_status_checks:
-                contexts:
-                - pr-build
       protect-tested-repos: true
     github:
       LinkURL: null
@@ -29,18 +21,6 @@ data:
         - master
         name: promotion
         skip_report: true
-      jstrachan/nodey502:
-      - agent: tekton
-        branches:
-        - master
-        name: release
-        skip_report: true
-      jstrachan/nodey503:
-      - agent: tekton
-        branches:
-        - master
-        name: release
-        skip_report: true
     presubmits:
       jstrachan/jx3-demo-gke-vault:
       - agent: tekton
@@ -49,32 +29,16 @@ data:
         name: promotion-build
         rerun_command: /test this
         trigger: (?m)^/test( all| this),?(\s+|$)
-      jstrachan/nodey502:
-      - agent: tekton
-        always_run: true
-        context: pr-build
-        name: pr-build
-        rerun_command: /test this
-        trigger: (?m)^/test( all| this),?(\s+|$)
-      jstrachan/nodey503:
-      - agent: tekton
-        always_run: true
-        context: pr-build
-        name: pr-build
-        rerun_command: /test this
-        trigger: (?m)^/test( all| this),?(\s+|$)
     prowjob_namespace: jx
     push_gateway:
       serve_metrics: false
     tide:
       context_options:
         from-branch-protection: true
-        required-if-present-contexts: null
+        required-if-present-contexts: []
         skip-unknown-contexts: false
       merge_method:
         jstrachan/jx3-demo-gke-vault: merge
-        jstrachan/nodey502: merge
-        jstrachan/nodey503: merge
       queries:
       - labels:
         - approved
@@ -86,8 +50,6 @@ data:
         - needs-rebase
         repos:
         - jstrachan/jx3-demo-gke-vault
-        - jstrachan/nodey502
-        - jstrachan/nodey503
       - labels:
         - updatebot
         missingLabels:
@@ -98,8 +60,6 @@ data:
         - needs-rebase
         repos:
         - jstrachan/jx3-demo-gke-vault
-        - jstrachan/nodey502
-        - jstrachan/nodey503
       target_url: http://deck-jx.35.238.123.29.nip.io
 kind: ConfigMap
 metadata:
