@@ -1,0 +1,52 @@
+# Source: kubeconawesome/templates/release.yaml
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2020-09-16T13:22:57Z"
+  deletionTimestamp: null
+  name: 'kubeconawesome-1.0.1'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  commits:
+    - author:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      branch: master
+      committer:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      message: |
+        release 1.0.1
+      sha: 55019f9f387ebba0630909dafe4380ad5956709e
+    - author:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      branch: master
+      committer:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      message: |
+        release 1.0.1
+      sha: 5c505187fbad8400f0ba9c1c365b5dcf8f6fc4ee
+  gitCloneUrl: https://github.com/jstrachan/kubeconawesome.git
+  gitHttpUrl: https://github.com/jstrachan/kubeconawesome
+  gitOwner: jstrachan
+  gitRepository: kubeconawesome
+  name: 'kubeconawesome'
+  releaseNotesURL: https://github.com/jstrachan/kubeconawesome/releases/tag/v1.0.1
+  version: v1.0.1
+status: {}
