@@ -53,4 +53,3 @@ spec:
               memory: 128Mi
       terminationGracePeriodSeconds:
       imagePullSecrets:
-        - name: "knative-docker-user-pass"
