@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - jstrachan/kubeconawesome
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - jstrachan/nodey504
       require_self_approval: true
     - lgtm_acts_as_approve: true
@@ -43,6 +47,22 @@ data:
       - heart
       - cat
       - override
+      - dog
+      - pony
+      jstrachan/kubeconawesome:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
       - dog
       - pony
       jstrachan/nodey504:
@@ -88,6 +108,9 @@ data:
     triggers:
     - repos:
       - jstrachan/jx3-demo-gke-vault
+      trusted_org: todo
+    - repos:
+      - jstrachan/kubeconawesome
       trusted_org: todo
     - repos:
       - jstrachan/nodey504

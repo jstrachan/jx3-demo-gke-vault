@@ -9,6 +9,10 @@ data:
               required_status_checks:
                 contexts:
                 - promotion-build
+            kubeconawesome:
+              required_status_checks:
+                contexts:
+                - pr-build
             nodey504:
               required_status_checks:
                 contexts:
@@ -29,6 +33,12 @@ data:
         - master
         name: promotion
         skip_report: true
+      jstrachan/kubeconawesome:
+      - agent: tekton
+        branches:
+        - master
+        name: release
+        skip_report: true
       jstrachan/nodey504:
       - agent: tekton
         branches:
@@ -47,6 +57,13 @@ data:
         always_run: true
         context: promotion-build
         name: promotion-build
+        rerun_command: /test this
+        trigger: (?m)^/test( all| this),?(\s+|$)
+      jstrachan/kubeconawesome:
+      - agent: tekton
+        always_run: true
+        context: pr-build
+        name: pr-build
         rerun_command: /test this
         trigger: (?m)^/test( all| this),?(\s+|$)
       jstrachan/nodey504:
@@ -73,6 +90,7 @@ data:
         skip-unknown-contexts: false
       merge_method:
         jstrachan/jx3-demo-gke-vault: merge
+        jstrachan/kubeconawesome: merge
         jstrachan/nodey504: merge
         jstrachan/nodey505: merge
       queries:
@@ -86,6 +104,7 @@ data:
         - needs-rebase
         repos:
         - jstrachan/jx3-demo-gke-vault
+        - jstrachan/kubeconawesome
         - jstrachan/nodey504
         - jstrachan/nodey505
       - labels:
@@ -98,6 +117,7 @@ data:
         - needs-rebase
         repos:
         - jstrachan/jx3-demo-gke-vault
+        - jstrachan/kubeconawesome
         - jstrachan/nodey504
         - jstrachan/nodey505
       target_url: http://deck-jx.35.238.123.29.nip.io
