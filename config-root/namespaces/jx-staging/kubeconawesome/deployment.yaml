@@ -5,7 +5,7 @@ metadata:
   name: kubeconawesome-kubeconawesome
   labels:
     draft: draft-app
-    chart: "kubeconawesome-1.0.1"
+    chart: "kubeconawesome-1.0.3"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   namespace: jx-staging
   annotations:
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: kubeconawesome
-          image: "gcr.io/jenkins-x-labs-bdd/kubeconawesome:1.0.1"
+          image: "gcr.io/jenkins-x-labs-bdd/kubeconawesome:1.0.3"
           imagePullPolicy: IfNotPresent
           env:
           envFrom: null

@@ -2,9 +2,9 @@
 apiVersion: jenkins.io/v1
 kind: Release
 metadata:
-  creationTimestamp: "2020-09-16T13:22:57Z"
+  creationTimestamp: "2020-09-16T14:52:10Z"
   deletionTimestamp: null
-  name: 'kubeconawesome-1.0.1'
+  name: 'kubeconawesome-1.0.3'
   namespace: jx-staging
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'
@@ -24,8 +24,8 @@ spec:
         email: jenkins-x@googlegroups.com
         name: jenkins-x-bot
       message: |
-        release 1.0.1
-      sha: 55019f9f387ebba0630909dafe4380ad5956709e
+        release 1.0.3
+      sha: 6149850b31f9949c5438ab4d69902c8618c75993
     - author:
         accountReference:
           - id: jenkins-x-bot-0
@@ -40,13 +40,13 @@ spec:
         email: jenkins-x@googlegroups.com
         name: jenkins-x-bot
       message: |
-        release 1.0.1
-      sha: 5c505187fbad8400f0ba9c1c365b5dcf8f6fc4ee
+        release 1.0.3
+      sha: 0f2afd7d8058a0543f8a62bb993dbb9436e65dd7
   gitCloneUrl: https://github.com/jstrachan/kubeconawesome.git
   gitHttpUrl: https://github.com/jstrachan/kubeconawesome
   gitOwner: jstrachan
   gitRepository: kubeconawesome
   name: 'kubeconawesome'
-  releaseNotesURL: https://github.com/jstrachan/kubeconawesome/releases/tag/v1.0.1
-  version: v1.0.1
+  releaseNotesURL: https://github.com/jstrachan/kubeconawesome/releases/tag/v1.0.3
+  version: v1.0.3
 status: {}
