@@ -1,0 +1,18 @@
+# Source: nodey502/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: nodey502
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: nodey502
+              servicePort: 80
+      host: nodey502-jx.35.238.123.29.nip.io
