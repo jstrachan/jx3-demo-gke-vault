@@ -9,5 +9,6 @@ spec:
     providerKind: github
     providerName: github
     repositories:
+    - name: kubeconawesome
     - name: nodey504
     - name: nodey505
