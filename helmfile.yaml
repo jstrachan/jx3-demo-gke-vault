@@ -92,7 +92,7 @@ releases:
   name: pusher-wave
   namespace: secret-infra
 - chart: dev/kubeconawesome
-  version: 1.0.1
+  version: 1.0.3
   name: kubeconawesome
   namespace: jx-staging
 templates: {}
