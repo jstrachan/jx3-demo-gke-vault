@@ -10,3 +10,4 @@ spec:
     providerName: github
     repositories:
     - name: nodey502
+    - name: nodey503

@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/jstrachan/nodey502.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: jstrachan
+  repo: nodey503
+  url: https://github.com/jstrachan/nodey503.git
+  version: ""
+  versionURL: ""
