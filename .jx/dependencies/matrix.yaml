@@ -23,3 +23,9 @@ dependencies:
   url: https://github.com/jstrachan/nodey505.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: jstrachan
+  repo: kubeconawesome
+  url: https://github.com/jstrachan/kubeconawesome.git
+  version: ""
+  versionURL: ""

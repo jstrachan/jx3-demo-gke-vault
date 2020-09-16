@@ -6,3 +6,4 @@ Dependency | Sources | Version | Mismatched versions
 [jstrachan/nodey503](https://github.com/jstrachan/nodey503.git) |  | []() | 
 [jstrachan/nodey504](https://github.com/jstrachan/nodey504.git) |  | []() | 
 [jstrachan/nodey505](https://github.com/jstrachan/nodey505.git) |  | []() | 
+[jstrachan/kubeconawesome](https://github.com/jstrachan/kubeconawesome.git) |  | []() | 

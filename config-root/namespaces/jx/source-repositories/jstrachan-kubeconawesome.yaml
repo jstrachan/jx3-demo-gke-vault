@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: jstrachan
+    provider: github
+    repository: kubeconawesome
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: jstrachan-kubeconawesome
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/jstrachan/kubeconawesome.git
+  org: jstrachan
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: kubeconawesome
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/jstrachan/kubeconawesome
