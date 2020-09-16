@@ -91,9 +91,5 @@ releases:
   version: 1.0.0
   name: pusher-wave
   namespace: secret-infra
-- chart: dev/nodey505
-  version: 1.0.1
-  name: nodey505
-  namespace: jx-staging
 templates: {}
 missingFileHandler: ""
