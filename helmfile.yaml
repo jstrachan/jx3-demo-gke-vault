@@ -95,5 +95,9 @@ releases:
   version: 1.0.5
   name: kubeconawesome
   namespace: jx-staging
+- chart: dev/nodey506
+  version: 1.0.3
+  name: nodey506
+  namespace: jx-staging
 templates: {}
 missingFileHandler: ""
