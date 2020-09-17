@@ -1,0 +1,52 @@
+# Source: nodey506/templates/release.yaml
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2020-09-17T04:42:41Z"
+  deletionTimestamp: null
+  name: 'nodey506-1.0.3'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  commits:
+    - author:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      branch: master
+      committer:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      message: |
+        release 1.0.3
+      sha: a771a02b3c44a22c419531862121f0a152246251
+    - author:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      branch: master
+      committer:
+        accountReference:
+          - id: jenkins-x-bot-0
+            provider: jenkins.io/git-github-userid
+        email: jenkins-x@googlegroups.com
+        name: jenkins-x-bot
+      message: |
+        release 1.0.3
+      sha: 8f83f3fcc7e7cfe7ffe48ccf9352eb093fc60a07
+  gitCloneUrl: https://github.com/jstrachan/nodey506.git
+  gitHttpUrl: https://github.com/jstrachan/nodey506
+  gitOwner: jstrachan
+  gitRepository: nodey506
+  name: 'nodey506'
+  releaseNotesURL: https://github.com/jstrachan/nodey506/releases/tag/v1.0.3
+  version: v1.0.3
+status: {}
