@@ -25,6 +25,10 @@ data:
               required_status_checks:
                 contexts:
                 - pr-build
+            nodey508:
+              required_status_checks:
+                contexts:
+                - pr-build
       protect-tested-repos: true
     github:
       LinkURL: null
@@ -56,6 +60,12 @@ data:
         name: release
         skip_report: true
       jstrachan/nodey506:
+      - agent: tekton
+        branches:
+        - master
+        name: release
+        skip_report: true
+      jstrachan/nodey508:
       - agent: tekton
         branches:
         - master
@@ -97,6 +107,13 @@ data:
         name: pr-build
         rerun_command: /test this
         trigger: (?m)^/test( all| this),?(\s+|$)
+      jstrachan/nodey508:
+      - agent: tekton
+        always_run: true
+        context: pr-build
+        name: pr-build
+        rerun_command: /test this
+        trigger: (?m)^/test( all| this),?(\s+|$)
     prowjob_namespace: jx
     push_gateway:
       serve_metrics: false
@@ -111,6 +128,7 @@ data:
         jstrachan/nodey504: merge
         jstrachan/nodey505: merge
         jstrachan/nodey506: merge
+        jstrachan/nodey508: merge
       queries:
       - labels:
         - approved
@@ -126,6 +144,7 @@ data:
         - jstrachan/nodey504
         - jstrachan/nodey505
         - jstrachan/nodey506
+        - jstrachan/nodey508
       - labels:
         - updatebot
         missingLabels:
@@ -140,6 +159,7 @@ data:
         - jstrachan/nodey504
         - jstrachan/nodey505
         - jstrachan/nodey506
+        - jstrachan/nodey508
       target_url: http://deck-jx.35.238.123.29.nip.io
 kind: ConfigMap
 metadata:
